@@ -3,17 +3,13 @@ import react from '@vitejs/plugin-react';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
-  base: '/studio/', // Replace with your GitHub repository name
+  base: '/studio/', // Ensure this matches your GitHub repository name
   plugins: [
     react(),
     viteStaticCopy({
       targets: [
-        { src: 'index.html', dest: '' }, // Copy index.html to the output directory for 404.html
+        { src: 'index.html', dest: '' }, // Ensure index.html is copied correctly
       ],
     }),
   ],
-  build: {
-    outDir: 'dist', // Ensure the build output is set correctly
-    emptyOutDir: true, // Clears old builds before generating a new one
-  },
 });
